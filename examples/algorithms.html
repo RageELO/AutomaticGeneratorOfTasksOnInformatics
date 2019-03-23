@@ -1,0 +1,29 @@
+<html>
+  <meta charset="utf-8">
+  <head>
+    <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="../js/raphael-min.js"></script>
+    <script type="text/javascript" src="../js/dracula_graffle.js"></script>
+    <script type="text/javascript" src="../js/dracula_graph.js"></script>
+    <script type="text/javascript" src="../js/dracula_algorithms.js"></script>
+    <script type="text/javascript" src="algorithms.js"></script>
+  </head>
+  <body>
+    <div id="canvas"></div>
+    Looks ugly? Hit <button id="redraw" onclick="redraw();">redraw</button>!<br>
+    Введите код для генерации: <input type="password" id="input_key"><br>
+
+    Выберите уровень: <select name="level" type id="input_level">
+          <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select><br>
+    Количество задач: <input type="text" id="input_numb"><br>
+    </select>
+    секретный ключ: <input type="password" id="input_key_check"><br>
+
+    <button id="generateTask" onclick="generateTask();">Показать задачу</button>
+    <input type="button" value ="Ответ" onclick="showAnswer()">
+    <div ID="answer"></div><br>
+  </body>
+</html>

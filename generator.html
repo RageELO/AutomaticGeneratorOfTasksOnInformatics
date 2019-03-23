@@ -1,0 +1,26 @@
+<html>
+	<meta charset="utf-8">
+	<head>
+		<script src='index.js'></script>
+		<script src='graph.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+	</head>
+	<body>
+		<div ID="equation"></div><br>
+		<div ID="answer"></div><br>
+		Введите код для генерации: <input type="password" id="input_key"><br>
+
+		Выберите уровень: <select name="level" type id="input_level">
+    			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select><br>
+		Количество задач: <input type="text" id="input_numb"><br>
+		</select><br>
+		секретный ключ: <input type="password" id="input_key_check"><br>
+
+
+		<input type="button" value ="Показать задачу" onclick="generateEquation1()">
+		<input type="button" value ="Ответ" onclick="showAnswer()">
+	<body>
+</html>
