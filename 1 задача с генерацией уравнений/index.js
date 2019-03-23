@@ -4,19 +4,22 @@ var x1 = 0;
 var level = 1;
 var seed = 1;
 var key = 1;
-var number_step = 0;
+
 var arr = [];
 var arr_anser = [];
 
-function generateEquation1() {
-    numb = Number(document.getElementById("input_numb").value);
-    if (numb == "")
-        numb = 4;
-    console.log(numb);
+function generateEquation1(){
+    var numb = 12;
+
+    if (Number(document.getElementById("input_numb").value != null))
+        numb = Number(document.getElementById("input_numb").value);
+    
     printInDiv("equation", "Вычислите сумму чисел <br>");
     var table = document.querySelector('#table1');
-    for (var i = 0; i < Math.ceil(numb/4); ++i)
+
+    for (var i = 0; i < Math.ceil(numb/4); ++i) 
         arr.push([generateEquation(), generateEquation(), generateEquation(), generateEquation()]);
+
     fillTable(table, arr);
     function fillTable(table, arr) {
         var i1 = 1;
@@ -47,12 +50,17 @@ function generateEquation1() {
     printInDiv("equation2", "<br>Ответ запишите в десятичной системе счисления.");
 }
 function generateEquation() {
-    key = Number(document.getElementById("input_key").value);
-    console.log(key);
+    if (Number(document.getElementById("input_key").value) != null) {
+        key = Number(document.getElementById("input_key").value);
+        console.log(key);
+    }
     level = Number(document.getElementById("input_level").value);
     console.log(level);
-    numb = Number(document.getElementById("input_numb").value);
-    console.log(numb);
+    if (Number(document.getElementById("input_numb").value) != null) {
+        numb = Number(document.getElementById("input_numb").value);
+        console.log(numb);
+
+    }
 
     x1 = 0;
     var text = "";
@@ -64,7 +72,6 @@ function generateEquation() {
             let b = rand(key, level) % 20 + 1;
             x1 = a + b;
             arr_anser.push(x1);
-            number_step += 2;
 
             
             return createEquation(a, b);
@@ -77,7 +84,6 @@ function generateEquation() {
             let c = rand(key, level) % 50;
             x1 = a + b + c;
             arr_anser.push(x1);
-            number_step += 3;
 
             return createEquation(a, b, c);
         }
@@ -90,7 +96,6 @@ function generateEquation() {
             let d = rand(key, level) % 100;
             x1 = a + b + c + d;
             arr_anser.push(x1);
-            number_step += 4;
 
             return createEquation(a, b, c, d);
         }
@@ -188,6 +193,12 @@ function rand(kay, level) {
 function rand1(a, b) {
     var value = Math.abs(Math.floor(Math.cos(step2 * step2) * 1337)) % 30;
     step2 += 1; 
+    if (value < 2) {
+        value = 2;
+    }
+    if (value > 32) {
+        value = 32;
+    }
     return value;
 }
 var res = generateEquation();
