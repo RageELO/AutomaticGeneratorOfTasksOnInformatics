@@ -1,0 +1,40 @@
+<html>
+	<meta charset="utf-8">
+	<style>
+		table td {
+			padding: 40px;
+			width: 10px;
+		}
+  	</style> 
+	<body>
+	  <head>
+		<script src='index.js'></script>
+		<script src='graph.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+	</head>
+		<div id="text0" style="font-size:1.5em"><u>Автоматический генератор задач по информатике</u></div>
+		<div id="equation" style="font-size:2em"></div><br>
+		<table id="table1" style="font-size:1.4em; width: 1px;"></table>
+		<div id="equation2" style="font-size:2em"></div><br>
+		<table id="table2" style="font-size:2em"></table>
+		<div id="answer" ></div><br>
+		<div id="text1" >Введите код для генерации:</div>
+		<input type="password" id="input_key"><br>
+		<div id="text2"  >Выберите уровень:</div>
+		<select name="level" type id="input_level">
+    			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select><br>
+		<div id="text3" >Количество задач (по умолчанию 4):</div>
+
+		<input type="text" id="input_numb" value="4"><br>
+		<div id="text4" style = "display:none; font-size:2em;">Ведите код генерации, который вы уже задали:</div>
+		<input type="password" id="input_key_check" style = "display:none"><br>
+
+
+		<input type="button" value ="Показать задачу" id="gen" onclick="generateEquation1()" >
+		<input type="button" value ="Сгенерировать еще задачу задачу" id="gen_new" style = "display:none" onclick="generateEquation1()" >
+		<input type="button" id = "ans1" value ="Ответы" style = "display:none" onclick="showAnswer()" >
+	<body>
+</html>
